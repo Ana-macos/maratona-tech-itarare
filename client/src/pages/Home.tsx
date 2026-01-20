@@ -454,12 +454,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Mentors Section */}
-      <MentorsSection />
-
-      {/* Blog Section */}
-      <BlogSection />
-
       {/* Prizes Section */}
       <section id="premios" className="py-24 bg-gradient-to-br from-primary/5 via-accent/5 to-primary/5 relative overflow-hidden">
         <div className="container relative z-10">
@@ -552,11 +546,6 @@ export default function Home() {
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     {criterion.description}
                   </p>
-                  <div className="pt-3 border-t border-border">
-                    <span className="text-lg font-bold text-primary">
-                      {criterion.weight}
-                    </span>
-                  </div>
                 </CardContent>
               </Card>
             ))}
