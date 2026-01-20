@@ -48,18 +48,6 @@ const supporters: Sponsor[] = [
     logo: "https://via.placeholder.com/200x100?text=Apoio+1",
     website: "https://apoio1.com.br",
   },
-  {
-    id: "s2",
-    name: "Apoio 2",
-    logo: "https://via.placeholder.com/200x100?text=Apoio+2",
-    website: "https://apoio2.com.br",
-  },
-  {
-    id: "s3",
-    name: "Apoio 3",
-    logo: "https://via.placeholder.com/200x100?text=Apoio+3",
-    website: "https://apoio3.com.br",
-  },
 ];
 
 export default function SponsorsSection() {
@@ -110,7 +98,7 @@ export default function SponsorsSection() {
               Apoios
             </h3>
             {supporters.length > 0 && (
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="flex justify-center">
                 {supporters.map((supporter) => (
                   <a
                     key={supporter.id}
