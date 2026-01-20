@@ -194,16 +194,6 @@ export default function Home() {
       answer:
         "Sim! Ofereceremos café da manhã, almoço, jantar e coffee breaks durante todo o evento para que você possa focar no desenvolvimento da sua solução.",
     },
-    {
-      question: "Quais são os critérios de avaliação?",
-      answer:
-        "Os projetos serão avaliados com base em: inovação, viabilidade técnica, impacto no turismo local, qualidade da apresentação e potencial de implementação.",
-    },
-    {
-      question: "O que acontece com os projetos após o hackathon?",
-      answer:
-        "Os projetos vencedores terão oportunidade de implementação em parceria com a prefeitura e empresas locais. Todos os participantes mantêm os direitos sobre suas criações.",
-    },
   ];
 
   return (
