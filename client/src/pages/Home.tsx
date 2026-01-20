@@ -117,21 +117,9 @@ export default function Home() {
   const prizes = [
     {
       position: "1º Lugar",
-      prize: "R$ 10.000",
+      prize: "R$ 4.000",
       description: "Prêmio em dinheiro + Mentorias especializadas",
       icon: Trophy,
-    },
-    {
-      position: "2º Lugar",
-      prize: "R$ 5.000",
-      description: "Prêmio em dinheiro + Acesso a programas de aceleração",
-      icon: Award,
-    },
-    {
-      position: "3º Lugar",
-      prize: "R$ 3.000",
-      description: "Prêmio em dinheiro + Networking com investidores",
-      icon: Award,
     },
   ];
 
@@ -341,7 +329,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {challenges.map((challenge, index) => (
               <Card
                 key={index}
