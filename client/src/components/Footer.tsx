@@ -16,6 +16,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Brand Section */}
           <div>
+            <img
+              src="/images/logo.png"
+              alt="Maratona Tech Itararé"
+              className="h-20 w-auto mb-4"
+            />
             <p className="text-secondary-foreground/80 leading-relaxed">
               Hackathon colaborativo focado em inovação e tecnologia para
               impulsionar o turismo em Itararé.

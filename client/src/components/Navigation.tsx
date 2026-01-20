@@ -45,7 +45,11 @@ export default function Navigation() {
           {/* Logo/Brand */}
           <Link href="/">
             <div className="flex items-center gap-3 cursor-pointer group">
-              {/* Logo removed */}
+              <img
+                src="/images/logo.png"
+                alt="Maratona Tech"
+                className="h-14 w-auto hover:scale-110 transition-transform duration-300"
+              />
             </div>
           </Link>
 
