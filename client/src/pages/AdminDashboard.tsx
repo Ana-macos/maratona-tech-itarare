@@ -26,32 +26,21 @@ import {
 import { useAdminAuth } from "@/contexts/AdminAuthContext";
 import AdminLogin from "@/components/AdminLogin";
 import { LogOut, Download, Trash2, Edit2, Search } from "lucide-react";
+import { downloadCSVWithStats } from "@/lib/csvExport";
 import { useState, useEffect } from "react";
 import { toast } from "sonner";
 
 interface Registration {
   name: string;
   email: string;
-  interest: string;
   timestamp: string;
 }
-
-const interestLabels: Record<string, string> = {
-  "web-dev": "Web Development",
-  "mobile-dev": "Mobile Development",
-  "ux-ui": "UX/UI Design",
-  backend: "Backend Development",
-  data: "Data & Analytics",
-  devops: "DevOps & Cloud",
-  product: "Product Management",
-  other: "Outro",
-};
 
 export default function AdminDashboard() {
   const { isAuthenticated, logout } = useAdminAuth();
   const [registrations, setRegistrations] = useState<Registration[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [filterInterest, setFilterInterest] = useState("all");
+
   const [editingIndex, setEditingIndex] = useState<number | null>(null);
   const [editData, setEditData] = useState<Registration | null>(null);
 
@@ -66,9 +55,7 @@ export default function AdminDashboard() {
     const matchesSearch =
       reg.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       reg.email.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesFilter =
-      filterInterest === "all" || reg.interest === filterInterest;
-    return matchesSearch && matchesFilter;
+    return matchesSearch;
   });
 
   // Deletar inscrição
@@ -111,33 +98,16 @@ export default function AdminDashboard() {
       return;
     }
 
-    const headers = ["Nome", "Email", "Área de Interesse", "Data/Hora"];
-    const csvContent = [
-      headers.join(","),
-      ...registrations.map((reg) =>
-        [
-          `"${reg.name}"`,
-          `"${reg.email}"`,
-          `"${interestLabels[reg.interest] || reg.interest}"`,
-          `"${new Date(reg.timestamp).toLocaleString("pt-BR")}"`,
-        ].join(",")
-      ),
-    ].join("\n");
-
-    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
-    const link = document.createElement("a");
-    const url = URL.createObjectURL(blob);
-    link.setAttribute("href", url);
-    link.setAttribute(
-      "download",
-      `inscricoes_maratona_${new Date().toISOString().split("T")[0]}.csv`
+    downloadCSVWithStats(
+      registrations.map((reg) => ({
+        name: reg.name,
+        email: reg.email,
+        timestamp: reg.timestamp,
+      })),
+      `inscritos-maratona-tech-${new Date().toISOString().split("T")[0]}.csv`
     );
-    link.style.visibility = "hidden";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
 
-    toast.success("Inscrições exportadas com sucesso");
+    toast.success("Inscrições exportadas com sucesso em CSV");
   };
 
   if (!isAuthenticated) {
@@ -244,29 +214,6 @@ export default function AdminDashboard() {
                 </div>
               </div>
 
-              {/* Filter by Interest */}
-              <div className="space-y-2">
-                <Label htmlFor="interest" className="font-semibold">
-                  Área de Interesse
-                </Label>
-                <Select value={filterInterest} onValueChange={setFilterInterest}>
-                  <SelectTrigger
-                    id="interest"
-                    className="border-border bg-background/50"
-                  >
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">Todas as áreas</SelectItem>
-                    {Object.entries(interestLabels).map(([value, label]) => (
-                      <SelectItem key={value} value={value}>
-                        {label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-
               {/* Export Button */}
               <div className="flex items-end">
                 <Button
@@ -303,7 +250,6 @@ export default function AdminDashboard() {
                     <TableRow className="border-border">
                       <TableHead>Nome</TableHead>
                       <TableHead>Email</TableHead>
-                      <TableHead>Área de Interesse</TableHead>
                       <TableHead>Data/Hora</TableHead>
                       <TableHead className="text-right">Ações</TableHead>
                     </TableRow>
@@ -342,28 +288,7 @@ export default function AdminDashboard() {
                                 />
                               </TableCell>
                               <TableCell>
-                                <Select
-                                  value={editData.interest}
-                                  onValueChange={(value) =>
-                                    setEditData({
-                                      ...editData,
-                                      interest: value,
-                                    })
-                                  }
-                                >
-                                  <SelectTrigger className="h-8 border-border">
-                                    <SelectValue />
-                                  </SelectTrigger>
-                                  <SelectContent>
-                                    {Object.entries(interestLabels).map(
-                                      ([value, label]) => (
-                                        <SelectItem key={value} value={value}>
-                                          {label}
-                                        </SelectItem>
-                                      )
-                                    )}
-                                  </SelectContent>
-                                </Select>
+
                               </TableCell>
                               <TableCell className="text-sm text-muted-foreground">
                                 {new Date(editData.timestamp).toLocaleString(
@@ -394,12 +319,7 @@ export default function AdminDashboard() {
                                 {reg.name}
                               </TableCell>
                               <TableCell>{reg.email}</TableCell>
-                              <TableCell>
-                                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary">
-                                  {interestLabels[reg.interest] ||
-                                    reg.interest}
-                                </span>
-                              </TableCell>
+
                               <TableCell className="text-sm text-muted-foreground">
                                 {new Date(reg.timestamp).toLocaleString(
                                   "pt-BR"

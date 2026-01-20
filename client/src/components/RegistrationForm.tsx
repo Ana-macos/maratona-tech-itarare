@@ -8,15 +8,10 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+
 import { toast } from "sonner";
 import { useState } from "react";
+import { sendConfirmationEmail } from "@/lib/emailService";
 
 interface RegistrationFormData {
   name: string;
@@ -89,6 +84,12 @@ export default function RegistrationForm({ onClose }: RegistrationFormProps) {
 
       setIsSuccess(true);
       toast.success("Inscrição realizada com sucesso!");
+
+      // Send confirmation email
+      await sendConfirmationEmail({
+        name: formData.name,
+        email: formData.email,
+      });
 
       // Reset form
       setFormData({
