@@ -21,24 +21,6 @@ const sponsors: Sponsor[] = [
     logo: "https://via.placeholder.com/200x100?text=Empresa+1",
     website: "https://empresa1.com.br",
   },
-  {
-    id: "2",
-    name: "Empresa 2",
-    logo: "https://via.placeholder.com/200x100?text=Empresa+2",
-    website: "https://empresa2.com.br",
-  },
-  {
-    id: "3",
-    name: "Empresa 3",
-    logo: "https://via.placeholder.com/200x100?text=Empresa+3",
-    website: "https://empresa3.com.br",
-  },
-  {
-    id: "4",
-    name: "Empresa 4",
-    logo: "https://via.placeholder.com/200x100?text=Empresa+4",
-    website: "https://empresa4.com.br",
-  },
 ];
 
 const supporters: Sponsor[] = [
@@ -68,7 +50,7 @@ export default function SponsorsSection() {
           {/* Sponsors */}
           {sponsors.length > 0 && (
             <div className="mb-16 fade-in-section opacity-0 transition-all duration-1000">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="flex justify-center">
                 {sponsors.map((sponsor) => (
                   <a
                     key={sponsor.id}
