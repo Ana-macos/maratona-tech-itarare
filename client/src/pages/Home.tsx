@@ -182,7 +182,7 @@ export default function Home() {
     {
       question: "Como funciona a formação de equipes?",
       answer:
-        "As equipes podem ter de 2 a 5 participantes. Você pode se inscrever com uma equipe já formada ou individualmente. Haverá um momento de networking para formação de equipes no início do evento.",
+        "As equipes podem ter de 2 a 5 participantes. Você pode se inscrever com uma equipe já formada previamente ou individualmente. Haverá um momento de networking para formação de equipes no início do evento.",
     },
     {
       question: "Preciso levar equipamentos?",
