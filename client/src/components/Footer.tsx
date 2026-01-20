@@ -10,16 +10,7 @@ import { Facebook, Instagram, Linkedin, Mail, MapPin } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="relative bg-secondary text-secondary-foreground">
-      {/* Wave Divider */}
-      <div className="wave-divider" style={{ top: 0, transform: "translateY(-100%)" }}>
-        <svg
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-          className="fill-secondary"
-        >
-          <path d="M0,0 C150,80 350,0 600,50 C850,100 1050,20 1200,60 L1200,120 L0,120 Z" />
-        </svg>
-      </div>
+
 
       <div className="container py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
