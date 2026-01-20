@@ -6,7 +6,7 @@
  */
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Mail, Linkedin } from "lucide-react";
+import { Linkedin } from "lucide-react";
 
 interface Mentor {
   id: number;
@@ -103,16 +103,6 @@ export default function MentorsSection() {
                 </p>
 
                 <div className="flex gap-3 pt-2">
-                  {mentor.email && (
-                    <a
-                      href={`mailto:${mentor.email}`}
-                      className="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary transition-colors duration-300"
-                      title={`Email ${mentor.name}`}
-                    >
-                      <Mail className="w-4 h-4" />
-                      <span className="text-xs font-medium hidden sm:inline">Email</span>
-                    </a>
-                  )}
                   {mentor.linkedin && (
                     <a
                       href={`https://${mentor.linkedin}`}
