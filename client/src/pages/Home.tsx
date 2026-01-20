@@ -17,6 +17,7 @@ import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
 import MentorsSection from "@/components/MentorsSection";
 import BlogSection from "@/components/BlogSection";
+import RegistrationModal from "@/components/RegistrationModal";
 import {
   Award,
   Calendar,
@@ -29,10 +30,11 @@ import {
   Trophy,
   Users,
 } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null);
+  const [isRegistrationModalOpen, setIsRegistrationModalOpen] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -238,6 +240,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
               <Button
                 size="lg"
+                onClick={() => setIsRegistrationModalOpen(true)}
                 className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg px-8 py-6 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105"
               >
                 Inscreva-se Agora
@@ -608,6 +611,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
               <Button
                 size="lg"
+                onClick={() => setIsRegistrationModalOpen(true)}
                 className="bg-white text-primary hover:bg-white/90 font-semibold text-lg px-8 py-6 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105"
               >
                 Inscreva-se Agora
@@ -638,6 +642,12 @@ export default function Home() {
       </section>
 
       <Footer />
+      
+      {/* Registration Modal */}
+      <RegistrationModal
+        isOpen={isRegistrationModalOpen}
+        onClose={() => setIsRegistrationModalOpen(false)}
+      />
     </div>
   );
 }
