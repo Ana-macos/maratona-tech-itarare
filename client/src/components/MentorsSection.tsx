@@ -98,8 +98,8 @@ export default function MentorsSection() {
               </div>
 
               <CardHeader className="pb-3">
-                <CardTitle className="font-display text-lg">{mentor.name}</CardTitle>
-                <CardDescription className="text-primary font-semibold text-sm">
+                <CardTitle className="font-display text-lg text-foreground">{mentor.name}</CardTitle>
+                <CardDescription className="text-primary font-semibold text-sm capitalize">
                   {mentor.specialty}
                 </CardDescription>
               </CardHeader>
