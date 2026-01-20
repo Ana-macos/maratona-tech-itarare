@@ -21,7 +21,6 @@ import { useState } from "react";
 interface RegistrationFormData {
   name: string;
   email: string;
-  interest: string;
 }
 
 interface RegistrationFormProps {
@@ -32,35 +31,16 @@ export default function RegistrationForm({ onClose }: RegistrationFormProps) {
   const [formData, setFormData] = useState<RegistrationFormData>({
     name: "",
     email: "",
-    interest: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-
-  const interestOptions = [
-    { value: "web-dev", label: "Web Development" },
-    { value: "mobile-dev", label: "Mobile Development" },
-    { value: "ux-ui", label: "UX/UI Design" },
-    { value: "backend", label: "Backend Development" },
-    { value: "data", label: "Data & Analytics" },
-    { value: "devops", label: "DevOps & Cloud" },
-    { value: "product", label: "Product Management" },
-    { value: "other", label: "Outro" },
-  ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-    }));
-  };
-
-  const handleSelectChange = (value: string) => {
-    setFormData((prev) => ({
-      ...prev,
-      interest: value,
     }));
   };
 
@@ -78,11 +58,6 @@ export default function RegistrationForm({ onClose }: RegistrationFormProps) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       toast.error("Por favor, insira um email válido");
-      return false;
-    }
-
-    if (!formData.interest) {
-      toast.error("Por favor, selecione uma área de interesse");
       return false;
     }
 
@@ -119,7 +94,6 @@ export default function RegistrationForm({ onClose }: RegistrationFormProps) {
       setFormData({
         name: "",
         email: "",
-        interest: "",
       });
 
       // Close modal after 2 seconds if provided
@@ -205,28 +179,6 @@ export default function RegistrationForm({ onClose }: RegistrationFormProps) {
           className="border-border bg-background/50 focus:bg-background transition-colors"
           disabled={isSubmitting}
         />
-      </div>
-
-      <div className="space-y-2">
-        <Label htmlFor="interest" className="font-display font-semibold">
-          Área de Interesse
-        </Label>
-        <Select value={formData.interest} onValueChange={handleSelectChange}>
-          <SelectTrigger
-            id="interest"
-            className="border-border bg-background/50 focus:bg-background transition-colors"
-            disabled={isSubmitting}
-          >
-            <SelectValue placeholder="Selecione uma área" />
-          </SelectTrigger>
-          <SelectContent>
-            {interestOptions.map((option) => (
-              <SelectItem key={option.value} value={option.value}>
-                {option.label}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
       </div>
 
       <Button

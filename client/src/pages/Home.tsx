@@ -16,7 +16,7 @@ import {
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
 import MentorsSection from "@/components/MentorsSection";
-import BlogSection from "@/components/BlogSection";
+
 import RegistrationModal from "@/components/RegistrationModal";
 import {
   Award,
@@ -260,9 +260,6 @@ export default function Home() {
 
       {/* Mentors Section */}
       <MentorsSection />
-
-      {/* Blog Section */}
-      <BlogSection />
 
       {/* About Section */}
       <section id="sobre" className="py-24 bg-background">
