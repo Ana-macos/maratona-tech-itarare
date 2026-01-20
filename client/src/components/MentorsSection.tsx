@@ -82,14 +82,6 @@ export default function MentorsSection() {
               className="fade-in-section opacity-0 transition-all duration-1000 hover:shadow-xl hover:-translate-y-2 overflow-hidden border-2 hover:border-primary/50 group"
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="relative overflow-hidden h-64 bg-gradient-to-br from-primary/10 to-accent/10">
-                <img
-                  src={mentor.image}
-                  alt={mentor.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-
               <CardHeader className="pb-3">
                 <CardTitle className="font-display text-lg">{mentor.name}</CardTitle>
                 <CardDescription className="text-primary font-semibold text-sm">

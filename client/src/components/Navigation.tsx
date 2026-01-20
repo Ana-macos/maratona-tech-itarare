@@ -59,18 +59,19 @@ export default function Navigation() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-foreground/80 hover:text-primary font-medium transition-colors duration-300 relative group"
+                className="text-white hover:text-primary font-medium transition-colors duration-300 relative group"
               >
                 {link.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full px-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-            >
-              Inscreva-se
-            </Button>
+              <Button
+                size="lg"
+                onClick={() => {}}
+                className="bg-primary hover:bg-primary/90 text-white font-semibold rounded-full px-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              >
+                Inscreva-se
+              </Button>
           </div>
 
           {/* Mobile Menu Button */}
