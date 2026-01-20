@@ -45,7 +45,7 @@ export default function Navigation() {
           {/* Logo/Brand */}
           <Link href="/">
             <div className="flex items-center gap-3 cursor-pointer group">
-              <span className="text-xl font-bold text-primary font-display">Maratona Tech</span>
+              {/* Logo removed */}
             </div>
           </Link>
 
