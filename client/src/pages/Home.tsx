@@ -167,7 +167,7 @@ export default function Home() {
     {
       question: "Qual é a faixa etária mínima para participar?",
       answer:
-        "O Maratona Tech Itararé é aberto para participantes com 16 anos ou mais. Menores de idade precisam de autorização dos responsáveis.",
+        "O Maratona Tech Itararé é aberto apenas para participantes com 16 anos ou mais. Menores de idade não podem participar do evento.",
     },
     {
       question: "Quem pode participar do hackathon?",
