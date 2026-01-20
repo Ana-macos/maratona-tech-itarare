@@ -1,12 +1,13 @@
 /**
  * Mentors Section Component - Organic Tech Fusion Design
  * - Grid layout showcasing mentor profiles
- * - Professional photos, names, and specialties
+ * - Placeholder image areas for mentor photos
+ * - Generic names and editable specialties
  * - Hover effects and interactive cards
  */
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Linkedin } from "lucide-react";
+import { Linkedin, ImageIcon } from "lucide-react";
 
 interface Mentor {
   id: number;
@@ -21,43 +22,43 @@ interface Mentor {
 const mentors: Mentor[] = [
   {
     id: 1,
-    name: "Marina Silva",
+    name: "Mentor 1",
     specialty: "Web Development & Startup Strategy",
     description:
       "Desenvolvedora full-stack com 10+ anos de experiência em startups. Especialista em React, Node.js e escalabilidade de aplicações.",
-    image: "/images/mentor-1.png",
-    email: "marina@tech.com",
-    linkedin: "linkedin.com/in/marina",
+    image: "/images/mentor-placeholder.png",
+    email: "mentor1@tech.com",
+    linkedin: "linkedin.com/in/mentor1",
   },
   {
     id: 2,
-    name: "Carlos Mendes",
+    name: "Mentor 2",
     specialty: "Mobile Development & IoT",
     description:
       "Engenheiro de software com expertise em desenvolvimento mobile e soluções IoT. Mentor de múltiplos projetos de sucesso.",
-    image: "/images/mentor-2.png",
-    email: "carlos@tech.com",
-    linkedin: "linkedin.com/in/carlos",
+    image: "/images/mentor-placeholder.png",
+    email: "mentor2@tech.com",
+    linkedin: "linkedin.com/in/mentor2",
   },
   {
     id: 3,
-    name: "Ana Costa",
+    name: "Mentor 3",
     specialty: "UX/UI Design & User Experience",
     description:
       "Designer de experiência com foco em turismo digital. Especialista em criar interfaces intuitivas e acessíveis.",
-    image: "/images/mentor-3.png",
-    email: "ana@design.com",
-    linkedin: "linkedin.com/in/ana",
+    image: "/images/mentor-placeholder.png",
+    email: "mentor3@design.com",
+    linkedin: "linkedin.com/in/mentor3",
   },
   {
     id: 4,
-    name: "Roberto Oliveira",
+    name: "Mentor 4",
     specialty: "Backend Development & Cloud",
     description:
       "Arquiteto de sistemas com expertise em cloud infrastructure e backend escalável. Especialista em AWS e DevOps.",
-    image: "/images/mentor-4.png",
-    email: "roberto@cloud.com",
-    linkedin: "linkedin.com/in/roberto",
+    image: "/images/mentor-placeholder.png",
+    email: "mentor4@cloud.com",
+    linkedin: "linkedin.com/in/mentor4",
   },
 ];
 
@@ -82,6 +83,20 @@ export default function MentorsSection() {
               className="fade-in-section opacity-0 transition-all duration-1000 hover:shadow-xl hover:-translate-y-2 overflow-hidden border-2 hover:border-primary/50 group"
               style={{ transitionDelay: `${index * 100}ms` }}
             >
+              <div className="relative overflow-hidden h-48 bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
+                <div className="absolute inset-0 flex items-center justify-center bg-muted/50">
+                  <ImageIcon className="w-12 h-12 text-muted-foreground/50" />
+                </div>
+                <img
+                  src={mentor.image}
+                  alt={mentor.name}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none";
+                  }}
+                />
+              </div>
+
               <CardHeader className="pb-3">
                 <CardTitle className="font-display text-lg">{mentor.name}</CardTitle>
                 <CardDescription className="text-primary font-semibold text-sm">
