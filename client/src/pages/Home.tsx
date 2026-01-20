@@ -217,13 +217,18 @@ export default function Home() {
               visitantes em Itararé.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
-              <Button
-                size="lg"
-                onClick={() => setIsRegistrationModalOpen(true)}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg px-8 py-6 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105"
+              <a
+                href="https://forms.gle/MkPVQ19Gf2QURrC47"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Inscreva-se Agora
-              </Button>
+                <Button
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg px-8 py-6 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105"
+                >
+                  Inscreva-se Agora
+                </Button>
+              </a>
               <Button
                 size="lg"
                 variant="outline"

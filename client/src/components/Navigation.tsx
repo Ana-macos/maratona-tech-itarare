@@ -77,17 +77,22 @@ export default function Navigation() {
                 <span className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-emerald-500 to-cyan-500 transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
-            <Button
-              size="lg"
-              onClick={() => {}}
-              className={`font-bold rounded-full px-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 ${
-                isScrolled
-                  ? "bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white"
-                  : "bg-gray-900 text-white hover:bg-gray-800"
-              }`}
+            <a
+              href="https://forms.gle/MkPVQ19Gf2QURrC47"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Inscreva-se
-            </Button>
+              <Button
+                size="lg"
+                className={`font-bold rounded-full px-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 ${
+                  isScrolled
+                    ? "bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white"
+                    : "bg-gray-900 text-white hover:bg-gray-800"
+                }`}
+              >
+                Inscreva-se
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -114,12 +119,19 @@ export default function Navigation() {
                   {link.label}
                 </a>
               ))}
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white font-bold rounded-full shadow-lg mt-2"
+              <a
+                href="https://forms.gle/MkPVQ19Gf2QURrC47"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full"
               >
-                Inscreva-se
-              </Button>
+                <Button
+                  size="lg"
+                  className="w-full bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white font-bold rounded-full shadow-lg mt-2"
+                >
+                  Inscreva-se
+                </Button>
+              </a>
             </div>
           </div>
         )}
