@@ -15,6 +15,8 @@ import {
 } from "@/components/ui/accordion";
 import Footer from "@/components/Footer";
 import Navigation from "@/components/Navigation";
+import MentorsSection from "@/components/MentorsSection";
+import BlogSection from "@/components/BlogSection";
 import {
   Award,
   Calendar,
@@ -131,11 +133,49 @@ export default function Home() {
     },
   ];
 
+  const evaluationCriteria = [
+    {
+      title: "Inovação",
+      description: "Criatividade e originalidade da solução apresentada",
+      weight: "20%",
+    },
+    {
+      title: "Impacto no Turismo",
+      description: "Potencial de transformação positiva no turismo local",
+      weight: "25%",
+    },
+    {
+      title: "Viabilidade",
+      description: "Possibilidade real de implementação e sustentabilidade",
+      weight: "20%",
+    },
+    {
+      title: "Qualidade Técnica",
+      description: "Excelência na execução e qualidade do código/design",
+      weight: "20%",
+    },
+    {
+      title: "Apresentação",
+      description: "Clareza, persuasão e qualidade do pitch final",
+      weight: "15%",
+    },
+  ];
+
   const faqs = [
+    {
+      question: "Qual é a faixa etária mínima para participar?",
+      answer:
+        "O Maratona Tech Itararé é aberto para participantes com 16 anos ou mais. Menores de idade precisam de autorização dos responsáveis.",
+    },
     {
       question: "Quem pode participar do hackathon?",
       answer:
         "O Maratona Tech Itararé é aberto a desenvolvedores, designers, empreendedores, estudantes e profissionais de todas as áreas interessados em inovação e tecnologia. Não é necessário ter experiência prévia em hackathons.",
+    },
+    {
+      question: "Quantas vagas e grupos haverá?",
+      answer:
+        "O Maratona Tech Itararé contará com 70 vagas no total, divididas em 12 grupos. Cada grupo será acompanhado por mentores especializados que fornecerão orientação durante todo o evento.",
     },
     {
       question: "Como funciona a formação de equipes?",
@@ -224,6 +264,12 @@ export default function Home() {
           </svg>
         </div>
       </section>
+
+      {/* Mentors Section */}
+      <MentorsSection />
+
+      {/* Blog Section */}
+      <BlogSection />
 
       {/* About Section */}
       <section id="sobre" className="py-24 bg-background">
@@ -405,6 +451,12 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Mentors Section */}
+      <MentorsSection />
+
+      {/* Blog Section */}
+      <BlogSection />
+
       {/* Prizes Section */}
       <section id="premios" className="py-24 bg-gradient-to-br from-primary/5 via-accent/5 to-primary/5 relative overflow-hidden">
         <div className="container relative z-10">
@@ -465,6 +517,47 @@ export default function Home() {
             alt=""
             className="w-full h-full object-cover"
           />
+        </div>
+      </section>
+
+      {/* Evaluation Criteria Section */}
+      <section className="py-24 bg-gradient-to-br from-primary/5 via-transparent to-accent/5">
+        <div className="container">
+          <div className="text-center mb-16 fade-in-section opacity-0 transition-all duration-1000">
+            <h2 className="font-display font-bold text-4xl md:text-5xl text-foreground mb-6">
+              Critérios de Avaliação
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Seus projetos serão avaliados com base em 5 critérios principais que
+              refletem a excelência e o impacto esperado.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-5 gap-6 max-w-6xl mx-auto">
+            {evaluationCriteria.map((criterion, index) => (
+              <Card
+                key={index}
+                className="fade-in-section opacity-0 transition-all duration-1000 hover:shadow-lg hover:-translate-y-2 border-2 hover:border-primary/50 text-center"
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
+                <CardHeader>
+                  <CardTitle className="font-display text-lg">
+                    {criterion.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {criterion.description}
+                  </p>
+                  <div className="pt-3 border-t border-border">
+                    <span className="text-lg font-bold text-primary">
+                      {criterion.weight}
+                    </span>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
