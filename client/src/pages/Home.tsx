@@ -246,16 +246,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Wave Divider */}
-        <div className="wave-divider">
-          <svg
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-            className="fill-background"
-          >
-            <path d="M0,0 C150,80 350,0 600,50 C850,100 1050,20 1200,60 L1200,120 L0,120 Z" />
-          </svg>
-        </div>
+
       </section>
 
       {/* Mentors Section */}
