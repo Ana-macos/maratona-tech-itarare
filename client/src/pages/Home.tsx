@@ -192,7 +192,7 @@ export default function Home() {
     {
       question: "Haverá alimentação durante o evento?",
       answer:
-        "Sim! Ofereceremos café da manhã, almoço, jantar e coffee breaks durante todo o evento para que você possa focar no desenvolvimento da sua solução.",
+        "Sim! Ofereceremos café da manhã, almoço e coffee breaks durante todo o evento para que você possa focar no desenvolvimento da sua solução.",
     },
   ];
 
