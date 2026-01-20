@@ -1,6 +1,7 @@
 /**
  * Navigation Component - Organic Tech Fusion Design
  * - Transparent background with backdrop blur on scroll
+ * - Colorful text with gradient and letter-by-letter coloring
  * - Smooth transitions and hover effects
  * - Logo integration with brand colors
  */
@@ -25,12 +26,23 @@ export default function Navigation() {
   }, []);
 
   const navLinks = [
-    { href: "#sobre", label: "Sobre" },
-    { href: "#desafios", label: "Desafios" },
-    { href: "#cronograma", label: "Cronograma" },
-    { href: "#premios", label: "Prêmios" },
-    { href: "#faq", label: "FAQ" },
+    { href: "#sobre", label: "Sobre", colors: ["text-emerald-500", "text-teal-500"] },
+    { href: "#desafios", label: "Desafios", colors: ["text-cyan-500", "text-blue-500"] },
+    { href: "#cronograma", label: "Cronograma", colors: ["text-teal-500", "text-emerald-500"] },
+    { href: "#premios", label: "Prêmios", colors: ["text-cyan-400", "text-teal-500"] },
+    { href: "#faq", label: "FAQ", colors: ["text-emerald-400", "text-cyan-500"] },
   ];
+
+  const renderColoredText = (text: string, colors: string[]) => {
+    return text.split("").map((char, index) => {
+      const colorClass = colors[index % colors.length];
+      return (
+        <span key={index} className={`${colorClass} font-bold`}>
+          {char}
+        </span>
+      );
+    });
+  };
 
   return (
     <nav
@@ -59,19 +71,19 @@ export default function Navigation() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-white hover:text-primary font-medium transition-colors duration-300 relative group"
+                className="font-bold hover:scale-110 transition-transform duration-300 relative group text-lg"
               >
-                {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                {renderColoredText(link.label, link.colors)}
+                <span className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-emerald-500 to-cyan-500 transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
-              <Button
-                size="lg"
-                onClick={() => {}}
-                className="bg-primary hover:bg-primary/90 text-white font-semibold rounded-full px-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-              >
-                Inscreva-se
-              </Button>
+            <Button
+              size="lg"
+              onClick={() => {}}
+              className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white font-bold rounded-full px-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            >
+              <span className="text-white">Inscreva-se</span>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -93,14 +105,14 @@ export default function Navigation() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-foreground/80 hover:text-primary font-medium transition-colors duration-300 py-2"
+                  className="font-bold text-lg transition-transform duration-300 py-2 hover:scale-110"
                 >
-                  {link.label}
+                  {renderColoredText(link.label, link.colors)}
                 </a>
               ))}
               <Button
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full shadow-lg mt-2"
+                className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white font-bold rounded-full shadow-lg mt-2"
               >
                 Inscreva-se
               </Button>
