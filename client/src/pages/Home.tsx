@@ -576,49 +576,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-r from-primary via-accent to-primary relative overflow-hidden">
-        <div className="container relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h2 className="font-display font-bold text-4xl md:text-5xl text-white leading-tight">
-              Pronto para Transformar o Turismo em Itararé?
-            </h2>
-            <p className="text-xl text-white/90 leading-relaxed">
-              Junte-se a nós nesta jornada de inovação e colaboração. Inscreva-se
-              agora e faça parte da mudança!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-              <Button
-                size="lg"
-                onClick={() => setIsRegistrationModalOpen(true)}
-                className="bg-white text-primary hover:bg-white/90 font-semibold text-lg px-8 py-6 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105"
-              >
-                Inscreva-se Agora
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 font-semibold text-lg px-8 py-6 rounded-full transition-all duration-300"
-              >
-                Entre em Contato
-              </Button>
-            </div>
-          </div>
-        </div>
 
-        {/* Animated Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-32 h-32 rounded-full bg-white animate-float" />
-          <div
-            className="absolute bottom-20 right-20 w-40 h-40 rounded-full bg-white animate-float"
-            style={{ animationDelay: "1s" }}
-          />
-          <div
-            className="absolute top-1/2 left-1/4 w-24 h-24 rounded-full bg-white animate-float"
-            style={{ animationDelay: "2s" }}
-          />
-        </div>
-      </section>
 
       <Footer />
       
