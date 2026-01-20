@@ -49,7 +49,7 @@ export default function Navigation() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-background/80 backdrop-blur-lg shadow-md"
-          : "bg-transparent"
+          : "bg-white shadow-md"
       }`}
     >
       <div className="container">
@@ -71,18 +71,24 @@ export default function Navigation() {
               <a
                 key={link.href}
                 href={link.href}
-                className="font-bold hover:scale-110 transition-transform duration-300 relative group text-lg"
+                className={`font-bold hover:scale-110 transition-all duration-300 relative group text-lg ${
+                  isScrolled ? "" : "text-black"
+                }`}
               >
-                {renderColoredText(link.label, link.colors)}
+                {isScrolled ? renderColoredText(link.label, link.colors) : link.label}
                 <span className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-emerald-500 to-cyan-500 transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
             <Button
               size="lg"
               onClick={() => {}}
-              className="bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white font-bold rounded-full px-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className={`font-bold rounded-full px-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 ${
+                isScrolled
+                  ? "bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 text-white"
+                  : "bg-black text-white hover:bg-gray-800"
+              }`}
             >
-              <span className="text-white">Inscreva-se</span>
+              Inscreva-se
             </Button>
           </div>
 
@@ -105,9 +111,11 @@ export default function Navigation() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="font-bold text-lg transition-transform duration-300 py-2 hover:scale-110"
+                  className={`font-bold text-lg transition-all duration-300 py-2 hover:scale-110 ${
+                    isScrolled ? "" : "text-black"
+                  }`}
                 >
-                  {renderColoredText(link.label, link.colors)}
+                  {isScrolled ? renderColoredText(link.label, link.colors) : link.label}
                 </a>
               ))}
               <Button
