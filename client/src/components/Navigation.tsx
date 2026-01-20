@@ -42,14 +42,10 @@ export default function Navigation() {
     >
       <div className="container">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+          {/* Logo/Brand */}
           <Link href="/">
             <div className="flex items-center gap-3 cursor-pointer group">
-              <img
-                src="/images/logo.png"
-                alt="Maratona Tech Itararé"
-                className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
-              />
+              <span className="text-xl font-bold text-primary font-display">Maratona Tech</span>
             </div>
           </Link>
 
