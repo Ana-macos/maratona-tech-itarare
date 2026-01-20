@@ -203,12 +203,13 @@ export default function Home() {
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden animate-fade-in"
         style={{
           backgroundImage: "url(/images/hero-bg.png)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
+          animation: "fadeIn 1.5s ease-in-out",
         }}
       >
         {/* Overlay for better text readability */}
