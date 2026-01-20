@@ -44,9 +44,9 @@ const sponsors: Sponsor[] = [
 const supporters: Sponsor[] = [
   {
     id: "s1",
-    name: "Apoio 1",
-    logo: "https://via.placeholder.com/200x100?text=Apoio+1",
-    website: "https://apoio1.com.br",
+    name: "Prefeitura de Itararé",
+    logo: "/images/prefeitura-itarare-logo.png",
+    website: "https://www.itarare.sp.gov.br",
   },
 ];
 
