@@ -439,7 +439,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="flex justify-center gap-8 max-w-5xl mx-auto">
             {prizes.map((prize, index) => (
               <Card
                 key={index}
