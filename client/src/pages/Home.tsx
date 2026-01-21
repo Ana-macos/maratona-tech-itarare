@@ -88,29 +88,29 @@ export default function Home() {
 
   const timeline = [
     {
-      date: "15 de Março",
+      date: "23 de Janeiro",
       title: "Abertura das Inscrições",
       description: "Período para formação de equipes e cadastro no evento.",
     },
     {
-      date: "10 de Abril",
-      title: "Início do Hackathon",
-      description: "Apresentação dos desafios e início do desenvolvimento.",
+      date: "03 de Março - 23:59",
+      title: "Encerramento das Inscrições",
+      description: "Último dia para se inscrever no Maratona Tech Itararé.",
     },
     {
-      date: "12 de Abril",
-      title: "Mentoria e Desenvolvimento",
-      description: "Sessões de mentoria com especialistas e desenvolvimento intensivo.",
+      date: "05 de Março",
+      title: "Divulgação dos Selecionados",
+      description: "Anúncio das equipes e participantes confirmados para o evento.",
     },
     {
-      date: "13 de Abril",
-      title: "Apresentações Finais",
-      description: "Pitches das equipes e avaliação dos projetos pela banca.",
+      date: "14 de Março - 08:00",
+      title: "Evento",
+      description: "Início do Maratona Tech Itararé com apresentação dos desafios.",
     },
     {
-      date: "13 de Abril - Noite",
-      title: "Premiação",
-      description: "Anúncio dos vencedores e entrega dos prêmios.",
+      date: "14 de Março - 20:00",
+      title: "Encerramento e Premiação",
+      description: "Apresentações finais, avaliação dos projetos e anúncio dos vencedores.",
     },
   ];
 
