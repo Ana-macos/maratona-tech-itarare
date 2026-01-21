@@ -77,7 +77,7 @@ export default function SponsorsSection() {
           {/* Supporters */}
           <div className="mt-20 fade-in-section opacity-0 transition-all duration-1000">
             <h3 className="text-center text-2xl font-bold text-foreground mb-12">
-              Apoios
+              Apoio
             </h3>
             {supporters.length > 0 && (
               <div className="flex justify-center">

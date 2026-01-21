@@ -33,9 +33,14 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
-                <span className="text-secondary-foreground/80">
+                <a
+                  href="https://www.google.com/maps/place/Itararé,+SP/@-24.1006,-49.6406,12z"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-secondary-foreground/80 hover:text-accent transition-colors duration-300 underline"
+                >
                   Itararé, São Paulo, Brasil
-                </span>
+                </a>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-accent mt-1 flex-shrink-0" />
